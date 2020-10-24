@@ -36,3 +36,27 @@ Route::get('/produk', function () {
 Route::get('/produk1', function () {
     return view('ecommerce.produk1');
 });
+
+Route::get('/base', function () {
+    return view('admin.base');
+});
+
+Route::get('beranda', function () {
+    return view('beranda');
+});
+
+Route::get('produk', function () {
+    return view('produk');
+});
+
+Route::get('kategori', function () {
+    return view('kategori');
+});
+
+Route::get('login', function () {
+    return view('login');
+});
+
+Route::get('register', function () {
+    return view('register');
+});
