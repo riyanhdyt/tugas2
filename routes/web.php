@@ -42,21 +42,25 @@ Route::get('/base', function () {
 });
 
 Route::get('beranda', function () {
-    return view('beranda');
+    return view('admin.beranda');
+});
+
+Route::get('promo', function () {
+    return view('admin.promo');
 });
 
 Route::get('produk', function () {
-    return view('produk');
+    return view('admin.produk');
 });
 
 Route::get('kategori', function () {
-    return view('kategori');
+    return view('admin.kategori');
 });
 
-Route::get('login', function () {
-    return view('login');
+Route::get('signin', function () {
+    return view('admin.signin');
 });
 
-Route::get('register', function () {
-    return view('register');
+Route::get('signup', function () {
+    return view('admin.signup');
 });
