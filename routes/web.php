@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ProdukController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,20 +44,8 @@ Route::get('/base', function () {
     return view('admin.base');
 });
 
-Route::get('beranda', function () {
-    return view('admin.beranda');
-});
-
 Route::get('promo', function () {
     return view('admin.promo');
-});
-
-Route::get('produk', function () {
-    return view('admin.produk');
-});
-
-Route::get('kategori', function () {
-    return view('admin.kategori');
 });
 
 Route::get('signin', function () {
@@ -64,3 +55,17 @@ Route::get('signin', function () {
 Route::get('signup', function () {
     return view('admin.signup');
 });
+
+
+Route::get('beranda', [HomeController::class, 'showBeranda']);
+Route::get('kategori', [HomeController::class, 'showKategori']);
+Route::get('signin', [AuthController::class, 'showSignin']);
+
+
+Route::get('produk', [ProdukController::class, 'index']);
+Route::get('produk/create', [ProdukController::class, 'create']);
+Route::post('produk', [ProdukController::class, 'store']);
+Route::get('produk/{produk}', [ProdukController::class, 'show']);
+Route::get('produk/{produk}/edit', [ProdukController::class, 'edit']);
+Route::put('produk/{produk}', [ProdukController::class, 'update']);
+Route::delete('produk/{produk}', [ProdukController::class, 'destroy']);
