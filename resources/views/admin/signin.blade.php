@@ -26,14 +26,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<h1><a href="base">Minimal </a></h1>
 		<div class="login-bottom">
 			<h2>Login</h2>
-			<form>
+			@include('template.utils.notif')
+			<form action="{{url('signin')}}" method="post">
+			@csrf
 			<div class="col-md-6">
 				<div class="login-mail">
-					<input type="text" placeholder="Email" required="">
+					<input type="email" placeholder="Email" name="email" required="">
 					<i class="fa fa-envelope"></i>
 				</div>
 				<div class="login-mail">
-					<input type="password" placeholder="Password" required="">
+					<input type="password" placeholder="Password" name="password" required="">
 					<i class="fa fa-lock"></i>
 				</div>
 				   <a class="news-letter " href="#">
@@ -44,14 +46,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 			<div class="col-md-6 login-do">
 				<label class="hvr-shutter-in-horizontal login-sub">
-					<a href="base" class="hvr-shutter-in-horizontal">Login</a>
+					<a href="beranda" class="hvr-shutter-in-horizontal">Login</a>
 					</label>
+			</form>
 					<p>Do not have an account?</p>
 				<a href="signup" class="hvr-shutter-in-horizontal">Signup</a>
 			</div>
 			
 			<div class="clearfix"> </div>
-			</form>
 		</div>
 	</div>
 		<!---->

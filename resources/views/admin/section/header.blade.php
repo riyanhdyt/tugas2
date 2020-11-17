@@ -80,12 +80,19 @@
 		              </ul>
 		            </li>
 					<li class="dropdown">
-		              <a href="#" class="dropdown-toggle dropdown-at" data-toggle="dropdown"><span class=" name-caret">Uppermoon<i class="caret"></i></span><img src="images/wo.jpg"></a>
+		              <a href="#" class="dropdown-toggle dropdown-at" data-toggle="dropdown"><span class=" name-caret">
+		              	@if(Auth::check())
+		              	{{request()->user()->username}}
+		              	@else
+		              	Silahkan Login
+		              	@endif
+		              	<i class="caret"></i></span><img src="images/wo.jpg"></a>
 		              <ul class="dropdown-menu " role="menu">
 		                <li><a href="profile.html"><i class="fa fa-user"></i>Edit Profile</a></li>
 		                <li><a href="inbox.html"><i class="fa fa-envelope"></i>Inbox</a></li>
 		                <li><a href="calendar.html"><i class="fa fa-calendar"></i>Calender</a></li>
 		                <li><a href="inbox.html"><i class="fa fa-clipboard"></i>Tasks</a></li>
+		                <li><a href="logout"><i class="fa fa-clipboard"></i>Logout</a></li>
 		              </ul>
 		            </li>
 		           
